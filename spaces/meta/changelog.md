@@ -11,6 +11,11 @@ What changed. Why. What to watch for.
 
 ---
 
+## [2026-04-27] add session-start lint nudge for the life space
+**File:** spaces/life/CLAUDE.md · **Proposal:** [[proposals/2026-04-27-session-start-lint-nudge-APPLIED]]
+
+Added a `lint-reports/` directory to the life space, a report file template (`type: lint-report`) with a status field, and a new `## Session-start check` section that fires when the user first routes to life and the most recent lint is >14 days old (or doesn't exist). Why: the existing `lint` operation only ran when the user explicitly asked, so wiki drift went uncaught. What to watch for: false-positive nudges if 14 days is too aggressive, missed drift if it's too lax. The cadence threshold is intentionally tunable.
+
 ## [2026-04-27] adopt Diego-native commit prefixes
 **File:** spaces/meta/CLAUDE.md · **Proposal:** [[proposals/2026-04-27-commit-prefixes-APPLIED]]
 

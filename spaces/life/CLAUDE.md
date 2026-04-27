@@ -31,6 +31,7 @@ spaces/life/
     journal/    # synthesized daily/weekly entries (you write these)
     decisions/  # decisions being wrestled with or resolved
     practices/  # habits, routines, rituals being built
+  lint-reports/ # dated lint outputs (YYYY-MM-DD-lint.md)
   index.md
   log.md
   CLAUDE.md     # symlink to diego-system/spaces/life/CLAUDE.md
@@ -106,9 +107,41 @@ Triggered weekly or on-demand: "what are you seeing," "what's the pattern."
 
 ### Lint
 
-Triggered by "lint" / "health check."
+Triggered by "lint" / "health check," or by the user accepting a session-start nudge (see "Session-start check" below).
 
 Look for orphan pages, stale entries (90+ days), contradictions across pages, concepts mentioned 3+ times without their own page, goals with no recent activity in `log.md`, frontmatter inconsistencies. **Report; don't fix without permission.**
+
+**Output:** every lint pass produces two artifacts:
+1. A conversational summary surfaced in the chat.
+2. A dated report file at `lint-reports/YYYY-MM-DD-lint.md` using the template below. The file is the durable record; the conversational summary is for in-the-moment review.
+
+**Lint report template:**
+
+```yaml
+---
+type: lint-report
+ran: YYYY-MM-DD
+status: open | reviewed | actioned | dismissed
+findings: <count>
+---
+```
+
+Body sections (omit any with zero findings): `## Orphans`, `## Stale`, `## Contradictions`, `## Promotable concepts`, `## Frontmatter issues`, `## Notes`.
+
+Append one line to `log.md` when a lint runs. Move the report's `status` to `reviewed` after the user has discussed it; to `actioned` after follow-up edits; to `dismissed` if no action will be taken. Status updates are part of the operation, not bookkeeping the user has to ask for.
+
+## Session-start check
+
+The first time in a session you route to or do work in the life space, check `lint-reports/`:
+
+- If empty, or the most recent report is dated **>14 days ago**, surface this briefly *before* doing the requested work: one sentence noting the gap, offer to run a lint pass.
+- If the user defers ("not now," "later"), proceed with the requested work and don't ask again this session.
+- If the user agrees, run `lint` (which produces a new dated report), then proceed.
+- If the most recent report exists and is ≤14 days old, no nudge — proceed silently.
+
+The 14-day threshold is the current default. Tune via meta loop if it proves too noisy or too quiet in practice.
+
+This is the lightest scheduling mechanism — no cron, no background execution. The "schedule" is just "Diego notices when you show up and lint is overdue."
 
 ## Voice-memo handling
 
