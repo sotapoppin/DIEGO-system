@@ -11,6 +11,11 @@ What changed. Why. What to watch for.
 
 ---
 
+## [2026-04-27] add `about` page type for life-space self-anchor
+**File:** spaces/life/CLAUDE.md · **Proposal:** [[proposals/2026-04-27-self-anchor-APPLIED]]
+
+Added `about` as a new page type, an `about.md` entry at the top of the wiki/ tree, and a page template describing the self-anchor. Why: the existing `person` template assumes asymmetric relational scaffolding that doesn't fit the user themselves, who is the *subject* of the entire life space. What to watch for: overlap between the `about` anchor and `journal/` entries on identity-touching reflections — the convention is `about` = stable identity facts and long arcs, `journal` = dated reflections.
+
 ## [2026-04-27] initial schema (v0.1)
 **File:** root + spaces/* · **Proposal:** none (initial design)
 

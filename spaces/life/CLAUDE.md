@@ -22,6 +22,7 @@ spaces/life/
     clips/      # web articles via Obsidian Web Clipper
     assets/     # images, attachments
   wiki/
+    about.md    # the self-anchor — distinct from people/
     people/     # one page per person who matters
     projects/   # active and dormant projects
     themes/     # recurring patterns: ambition, anxiety, creativity
@@ -43,7 +44,7 @@ Create directories on demand — don't pre-populate empty folders.
 
 ```yaml
 ---
-type: person | project | theme | goal | health | journal | decision | practice
+type: about | person | project | theme | goal | health | journal | decision | practice
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
 sources: [list of paths to raw/ files this page draws from]
@@ -61,6 +62,7 @@ status: active | dormant | resolved | archived
 
 ### Page templates
 
+- **about**: the canonical identity-anchor for the user (the subject of the space). Sections: identity (name, origin, where the user lives now), current context (work, key relationships at a high level, ongoing situations), recurring threads or arcs across time, open questions about the user's own trajectory. Distinct from `people/` — that directory is for *others* in the user's life. Exactly one `about.md` per life space.
 - **person**: relationship, recent interactions, recurring threads, open commitments to them, open questions.
 - **project**: what it is, why it matters, current state, blockers, next steps, history of evolving thinking.
 - **theme**: definition, when it shows up, triggers, how the user has described it over time, related themes/people.
