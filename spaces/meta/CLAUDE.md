@@ -79,7 +79,7 @@ Once explicitly approved:
 - Edit the target file with the proposed change.
 - Rename the proposal: `YYYY-MM-DD-<slug>-APPLIED.md` and add an "Applied" footer.
 - Append an entry to `changelog.md`.
-- Suggest the user commit: `git -C ~/diego-system add . && git commit -m "schema: <one-line summary>"`.
+- Suggest the user commit, using the prefixes from "Commit conventions" below: `git -C ~/diego-system add . && git commit -m "schema: <one-line summary>"`.
 - If significant, write or update a design note in `design-notes/`.
 
 **f. Don't re-litigate.**
@@ -156,6 +156,22 @@ What changed (1-2 sentences). Why (1-2 sentences). What to watch for (1 sentence
 ```
 - [YYYY-MM-DD] <space> | <abstracted one-sentence description>
 ```
+
+## Commit conventions
+
+Commits to `DIEGO-system` use Diego-native prefixes that map to the kind of change being made. Avoid Conventional Commits vocabulary (`feat:`, `chore:`, `fix:`) — Diego is not a software product shipping features.
+
+The prefixes:
+
+- **`schema:`** — edits to any `CLAUDE.md` (root, space-level, or meta-level). The rules themselves changed.
+- **`meta:`** — additions or edits to meta-space artifacts only (proposals, design notes, friction-log entries, patterns, changelog entries) without an accompanying schema edit.
+- **`space:`** — edits to space-level files that are *not* `CLAUDE.md` (e.g., seeding `index.md` structure, structural template content). Rare, since most space content lives in the vault.
+- **`repo:`** — filesystem layout, install scripts, `.gitignore`, structural moves of files between directories, anything affecting how the repo itself is shaped.
+- **`docs:`** — top-level README, public-facing documentation aimed at outside readers.
+
+When a single commit contains both a schema edit and the meta artifacts that support it (typical for an applied meta loop), use `schema:` — the schema change is the headline; the proposal and changelog entries are supporting evidence in the same commit.
+
+Commit message bodies (the lines after the title) follow standard prose style — no prefix required. Apply public-meta discipline as always: no vault content.
 
 ## Tone in the meta space
 

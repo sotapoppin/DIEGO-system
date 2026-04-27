@@ -11,6 +11,11 @@ What changed. Why. What to watch for.
 
 ---
 
+## [2026-04-27] adopt Diego-native commit prefixes
+**File:** spaces/meta/CLAUDE.md · **Proposal:** [[proposals/2026-04-27-commit-prefixes-APPLIED]]
+
+Replaced Conventional Commits vocabulary (`feat:`, `chore:`) with Diego-native prefixes that map to meta operations: `schema:`, `meta:`, `space:`, `repo:`, `docs:`. Why: `chore:` framed structural work as filler, and the Conventional Commits vocabulary doesn't fit a system that doesn't ship features. What to watch for: drift back to generic vocabulary on small commits, and ambiguity when a commit straddles two prefix categories — the rule is to prefer `schema:` when any schema edit is included.
+
 ## [2026-04-27] add `about` page type for life-space self-anchor
 **File:** spaces/life/CLAUDE.md · **Proposal:** [[proposals/2026-04-27-self-anchor-APPLIED]]
 
