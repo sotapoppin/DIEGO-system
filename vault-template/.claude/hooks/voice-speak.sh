@@ -11,7 +11,7 @@ transcript=$(echo "$input" | jq -r '.transcript_path // empty' 2>/dev/null)
 
 extract_speak() {
   jq -rs '
-    (. | map(.type == "user") | rindex(true)) as $last_user
+    (. | map(.type == "user" and (.message.content | type == "string" or (type == "array" and (.[0].type // "") == "text"))) | rindex(true)) as $last_user
     | .[($last_user // -1) + 1 :]
     | [.[] | select(.type == "assistant" and (.message.content | type) == "array") | .message.content[] | select(.type == "text") | .text]
     | join("\n---SEP---\n")
