@@ -11,6 +11,16 @@ What changed. Why. What to watch for.
 
 ---
 
+## [2026-04-27] relocate skills to system repo + add `/wrap`
+**File:** skills/, install.sh · **Proposal:** [[proposals/2026-04-27-canonical-skills-and-wrap-APPLIED]]
+
+Created top-level `DIEGO-system/skills/` directory with three canonical skills (`commit`, `push`, `wrap`) and modified `install.sh` to symlink `vault/.claude/skills` → `system/skills` so updates propagate to all installs (mirroring the meta-space symlink pattern). New `/wrap` skill triggers the just-applied `## Sessions` journal convention — synthesizes the current session into a structured `### <slot> — <slug>` entry and appends it under today's `## Sessions` block. Skills now use path-portable system-repo detection (via the `CLAUDE.md` symlink) instead of hardcoded user paths. Why: skill improvements should propagate centrally rather than fork per-install, the Sessions convention needed an actual trigger, and hardcoded user paths broke portability. What to watch for: per-install customization need (no override pattern yet), and any Claude Code change that affects how it follows symlinks during skill discovery.
+
+## [2026-04-27] add `## Sessions` block to life-space journal entries
+**File:** spaces/life/CLAUDE.md · **Proposal:** [[proposals/2026-04-27-journal-sessions-block-APPLIED]]
+
+Added a convention requiring every day's `journal/YYYY-MM-DD.md` to end with a `## Sessions` block of structured per-session summaries (`### <slot> — <slug>` with Discussed / Decisions / In-flight / Files touched lines). The reflective narrative at the top of the entry stays as-is; the Sessions block is the scannable record next-session-Diego reads first to load context. Why: conversations had with the assistant had no structured home — the journal captured the day thematically and `log.md` listed operations terse-style, but there was no per-session record of what was discussed, decided, in flight, or touched. What to watch for: journals growing too long on high-activity days (the page-bloat archive convention, separately friction-logged, is the eventual mitigation), and drift back toward putting session summaries inside the narrative rather than the structured block.
+
 ## [2026-04-27] fix invalid YAML in life-space frontmatter example
 **File:** spaces/life/CLAUDE.md · **Proposal:** [[proposals/2026-04-27-frontmatter-yaml-fix-APPLIED]]
 

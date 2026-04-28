@@ -74,9 +74,27 @@ status: active | dormant | resolved | archived
 - **project**: what it is, why it matters, current state, blockers, next steps, history of evolving thinking.
 - **theme**: definition, when it shows up, triggers, how the user has described it over time, related themes/people.
 - **goal**: what, why, current status, dated progress history, obstacles, related practices.
-- **journal**: dated synthesis of a day or week. Not transcript — *reflection.* What happened, what was felt, what patterns showed up, what's unresolved.
+- **journal**: dated synthesis of a day or week. Not transcript — *reflection.* What happened, what was felt, what patterns showed up, what's unresolved. End the entry with a `## Sessions` block (see "Session entries" below) for scannable per-session summaries.
 - **decision**: the question, options, what's pulling each way, current lean, what would resolve it, history.
 - **practice**: what the habit is, why, current adherence, history of attempts.
+
+### Session entries (within journal)
+
+Every working session within a day appends a structured entry under a `## Sessions` heading at the end of that day's `journal/YYYY-MM-DD.md`. The reflective narrative at the top of the journal stays as-is — it's for human reading and theme detection. The Sessions block is the scannable record next-session-Diego reads first to load context fast.
+
+Each session entry uses this shape:
+
+```markdown
+### <slot> — <session-slug>
+**Discussed:** one-line topic summary.
+**Decisions:** bullets, or "none."
+**In-flight:** what's pending for the next session, or "none."
+**Files touched:** bullets with vault paths (and DIEGO-system paths if applicable).
+```
+
+`<slot>` is `morning` / `afternoon` / `evening` (or a specific time like `14:30`). `<session-slug>` is a 1-3 word topic anchor.
+
+Sessions are appended as they end (or via an end-of-session trigger), not retroactively reconstructed unless explicitly asked.
 
 ## Operations
 

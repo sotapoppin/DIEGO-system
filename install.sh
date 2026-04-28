@@ -106,6 +106,21 @@ else
   echo "  $VAULT_DIR/spaces/meta -> $SYSTEM_REPO/spaces/meta"
 fi
 
+# Skills directory — canonical operational skills (/commit, /push, /wrap, etc.)
+# live in the system repo and are symlinked into the vault's .claude/skills/ so
+# updates to skills propagate to every install. Per-install Claude Code settings
+# (.claude/settings.json) stay local and are not managed here.
+mkdir -p "$VAULT_DIR/.claude"
+if [[ -L "$VAULT_DIR/.claude/skills" ]]; then
+  rm "$VAULT_DIR/.claude/skills"
+elif [[ -e "$VAULT_DIR/.claude/skills" ]]; then
+  echo "  WARNING: $VAULT_DIR/.claude/skills exists and is not a symlink."
+  echo "           Move or delete it manually and re-run to use the canonical skills."
+else
+  ln -s "$SYSTEM_REPO/skills" "$VAULT_DIR/.claude/skills"
+  echo "  $VAULT_DIR/.claude/skills -> $SYSTEM_REPO/skills"
+fi
+
 # --- Vault .gitignore (just in case the user runs `git init` in the vault) ---
 if [[ ! -f "$VAULT_DIR/.gitignore" ]]; then
   cat > "$VAULT_DIR/.gitignore" <<'EOF'
