@@ -28,7 +28,7 @@ done
 [ -n "$speak" ] || exit 0
 
 pkill -x say 2>/dev/null || true
-( say -r 210 -- "$speak" 2>/dev/null ) &
+( say -r 180 -- "$speak" 2>/dev/null ) &
 disown $!
 
 exit 0
