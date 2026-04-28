@@ -11,6 +11,11 @@ What changed. Why. What to watch for.
 
 ---
 
+## [2026-04-27] fix invalid YAML in life-space frontmatter example
+**File:** spaces/life/CLAUDE.md · **Proposal:** [[proposals/2026-04-27-frontmatter-yaml-fix-APPLIED]]
+
+Converted the frontmatter example for `sources` and `related` from comma-separated bare wikilinks (which Obsidian's properties feature parses as malformed) to proper YAML block lists with double-quoted wikilink strings. Added a one-sentence note explaining why the previous form failed. Why: every page produced by following the example had invalid frontmatter — caught after 14 vault pages had been written with the broken pattern. What to watch for: any future schema example introducing inline `[[...]]` syntax in YAML — same trap.
+
 ## [2026-04-27] friendly-mode identity tuning
 **File:** CLAUDE.md · **Proposal:** [[proposals/2026-04-27-friendly-mode-APPLIED]]
 

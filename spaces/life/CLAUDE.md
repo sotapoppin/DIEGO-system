@@ -48,11 +48,17 @@ Create directories on demand — don't pre-populate empty folders.
 type: about | person | project | theme | goal | health | journal | decision | practice
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
-sources: [list of paths to raw/ files this page draws from]
-related: [[other-page]], [[another-page]]
+sources:
+  - "[[raw/voice/2026-04-15-1430-morning-walk]]"
+  - "[[raw/notes/some-note]]"
+related:
+  - "[[other-page]]"
+  - "[[another-page]]"
 status: active | dormant | resolved | archived
 ---
 ```
+
+**Wikilink fields use a YAML block list with quoted values.** Both `sources` and `related` are lists, even when there's only one entry. The bare `[[link]]` syntax (with or without commas) is parsed incorrectly by Obsidian's properties feature — `[[...]]` reads as a nested array, and `[[a]], [[b]]` reads as a single malformed string. Use the list form with double-quoted wikilinks.
 
 ### Body
 
