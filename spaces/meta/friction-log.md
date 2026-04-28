@@ -9,3 +9,5 @@ Format: `- [YYYY-MM-DD] <space> | <abstracted one-sentence description>`
 A friction that recurs 3+ times graduates to a `pattern` (see `patterns/`). A friction the user wants fixed graduates to a `proposal` (see `proposals/`).
 
 ---
+
+- [2026-04-27] meta | identity-tuning experiment may inflate response length and token usage; revisit after a week of real use to check whether warmer register costs meaningfully more output
