@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": ["Edit", "Write"]
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash $CLAUDE_PROJECT_DIR/.claude/hooks/voice-speak.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}
