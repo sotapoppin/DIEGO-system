@@ -145,11 +145,17 @@ Why this change. What it fixes. What it might break or trade off.
 ### Changelog entry format
 
 ```markdown
-## [YYYY-MM-DD] <short title>
+## vX.Y — YYYY-MM-DD — <theme>
+
+One-line description of what this version represents.
+
+### [YYYY-MM-DD] <short title>
 **File:** <path> · **Proposal:** [[proposals/YYYY-MM-DD-slug-APPLIED]]
 
 What changed (1-2 sentences). Why (1-2 sentences). What to watch for (1 sentence).
 ```
+
+Entries are grouped under a version header (`## vX.Y — date — theme`) at the top of the file, with new entries prepended above older ones inside the same version section. Versions are simple integers — minor bumps (`1.0` → `1.1`) for additive schema changes, major bumps (`1.x` → `2.0`) for identity changes or breaking architectural shifts. The user calls the version bump on milestone moments; entries between bumps accumulate under the current open header.
 
 ### Friction-log entry format
 

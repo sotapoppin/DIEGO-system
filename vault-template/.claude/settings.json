@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": ["Edit", "Write", "Read", "Glob", "Grep", "Bash(*)"],
+    "ask": ["Bash(git push*)", "Bash(git commit*)"]
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash $CLAUDE_PROJECT_DIR/.claude/hooks/voice-speak.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash $CLAUDE_PROJECT_DIR/.claude/hooks/voice-narrate.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}
