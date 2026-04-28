@@ -103,7 +103,7 @@ You're welcome to fork this. If you do:
 
 ## Status
 
-v0.1. Iterating in public. The schema is the *current* best guess at how Diego should work — expect it to change as friction accumulates.
+v1.0. Iterating in public. The schema is the *current* best guess at how Diego should work — expect it to change as friction accumulates. Versions are simple integers (`1.0`, `1.1`, `2.0`); see `spaces/meta/changelog.md` for what each version contains.
 
 ## Background
 
