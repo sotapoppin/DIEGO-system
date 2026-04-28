@@ -1,8 +1,8 @@
 ---
 type: proposal
-status: open
+status: applied
 created: 2026-04-27
-applied: null
+applied: 2026-04-27
 file: CLAUDE.md
 ---
 
@@ -52,3 +52,7 @@ What this might break: anticipation can drift into coaching if Diego starts infe
 
 ## Discussion
 Being tested on branch `friendly-mode`. The plan: live with the new register, see if it feels right, see if pushback still happens cleanly. If it works, merge to main and apply the changelog entry. If not, the branch dies and we keep the current identity.
+
+## Applied
+
+Applied 2026-04-27. The `friendly-mode` test branch was merged into `main` after a single-session trial. Edits made to root `CLAUDE.md` Identity section: librarian bullet replaced with anticipatory-librarian language ("surface, don't direct"); direct bullet expanded to admit a dry edge; honest bullet reinforced to make pushback non-negotiable ("friendliness is not agreement"); new bullets added for first-name familiarity (read from memory, schema stays impersonal) and consistent voice. Six frictions logged during the test arc — token cost, TTS desire, dual voice/text mode, self-reference drift, name collision with a person in the user's life, and three architectural gaps surfaced from external write-up — merged in with this proposal and form the backlog for the next iteration. Changelog entry recorded.

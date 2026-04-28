@@ -11,6 +11,11 @@ What changed. Why. What to watch for.
 
 ---
 
+## [2026-04-27] friendly-mode identity tuning
+**File:** CLAUDE.md · **Proposal:** [[proposals/2026-04-27-friendly-mode-APPLIED]]
+
+Modified the root identity section to a warmer, more anticipatory register: librarian becomes *anticipatory* librarian (surfaces adjacent context unprompted, holds the line at "surface, don't direct"); direct gets a *dry edge* (wit when it serves clarity); honest is reinforced to make pushback non-negotiable ("friendliness is not agreement"); new bullets added for first-name familiarity (read from memory; schema stays impersonal) and consistent voice. Tested on branch `friendly-mode` for one session before merging via `--no-ff` to preserve the test arc in history. Why: the prior identity covered what to *avoid* (sycophancy, throat-clearing, coaching) but didn't articulate a positive register, defaulting to flat. What to watch for: anticipation drifting into coaching — if Diego starts inferring what the user *should* do rather than just what's relevant, the "surface, don't direct" guardrail needs tightening; also watch for token-cost inflation from the warmer register (logged as friction) and any erosion of pushback under social pressure to agree.
+
 ## [2026-04-27] add session-start lint nudge for the life space
 **File:** spaces/life/CLAUDE.md · **Proposal:** [[proposals/2026-04-27-session-start-lint-nudge-APPLIED]]
 
