@@ -11,3 +11,5 @@ A friction that recurs 3+ times graduates to a `pattern` (see `patterns/`). A fr
 ---
 
 - [2026-04-27] meta | identity-tuning experiment may inflate response length and token usage; revisit after a week of real use to check whether warmer register costs meaningfully more output
+- [2026-04-27] meta | text-only output limits the conversational feel; user wants Diego to speak responses aloud (TTS), not just type — relevant when scoping voice-interface work
+- [2026-04-27] meta | one register doesn't fit both modalities; user wants two output modes — a terse voice-mode (responses kept short for TTS playback) and the current text-mode (full structure, lists, code blocks)
