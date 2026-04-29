@@ -21,6 +21,11 @@ Versions are simple integers (`1.0`, `1.1`, `2.0`). Minor bumps for additive sch
 
 Initial bootstrap plus the 2026-04-27 schema iterations (about page, commit prefixes, lint nudge, friendly-mode, YAML fix, sessions block, canonical skills + `/wrap`) plus the 2026-04-28 speak-mode dual-output convention. The accumulated state at which the system was first declared coherent enough to version.
 
+### [2026-04-28] add `/ingest` and `/update` skills for batched wiki authoring
+**File:** skills/ingest/, skills/update/ · **Proposal:** [[proposals/2026-04-28-ingest-update-skills-APPLIED]]
+
+Added two new skills to support conversational wiki dumps without per-fact filing churn. `/ingest` enters batched mode (stop filing, ask 1–2 broad questions per topic, accumulate); `/update` commits the accumulated batch in one synthesized pass and exits the mode. Why: live conversational ingest with per-fact filing was crushing throughput — 4–8 file edits per user turn, narrow follow-up questions, conversation crawl. Three feedback memories saved alongside (caring register, question density, assumption defaults) shape behavior *within* the modes; the skills define the *shape* of the workflow. What to watch for: context loss if `/clear` fires mid-batch (mitigated by committing at natural pauses); brief-back ceremony creep on `/update` (skill body explicitly tells assistant to keep it tight or skip).
+
 ### [2026-04-28] add speak-mode dual-output convention
 **File:** CLAUDE.md, .claude/settings.json (per install), .claude/hooks/voice-speak.sh (per install) · **Proposal:** [[proposals/2026-04-28-voice-mode-dual-output]]
 
