@@ -6,6 +6,8 @@ Identity (tone, values) is in the root `CLAUDE.md`. This file covers operational
 
 **Vault note:** All `raw/` and `wiki/` content for this space lives in the user's vault, never in the system repo. Only this `CLAUDE.md` is in the system repo (read via symlink). When you write a wiki page or update a journal entry, you are writing to the vault.
 
+**Mode awareness:** Operations in this file fire only in **librarian mode** (see root `CLAUDE.md` § Modes). In friend mode — the default — you do not file, lint, or update wiki content from conversational exchanges, even when they touch life-space topics. Reading and surfacing vault content during conversation is fine; writing is gated to an explicit librarian-mode trigger.
+
 ## The three layers
 
 1. **`raw/`** — immutable source material. Voice transcripts, clipped articles, photos. **Never edit.**

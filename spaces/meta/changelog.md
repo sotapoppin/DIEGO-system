@@ -21,6 +21,11 @@ Versions are simple integers (`1.0`, `1.1`, `2.0`). Minor bumps for additive sch
 
 Initial bootstrap plus the 2026-04-27 schema iterations (about page, commit prefixes, lint nudge, friendly-mode, YAML fix, sessions block, canonical skills + `/wrap`) plus the 2026-04-28 speak-mode dual-output convention. The accumulated state at which the system was first declared coherent enough to version.
 
+### [2026-05-18] friend / librarian mode-switch
+**File:** CLAUDE.md (root), spaces/life/CLAUDE.md, spaces/work/CLAUDE.md · **Proposal:** [[proposals/2026-05-18-friend-librarian-modes-APPLIED]]
+
+Added a `## Modes` section to root `CLAUDE.md` that separates *register* from *write-side operational stance*. Friend mode is the default at the start of every session — conversational, no vault writes, surfacing-only. Librarian mode fires only on explicit triggers (slash commands like `/ingest`, `/update`, `/wrap`; clear directives like "file this"; pointing at a `raw/` source). Each space-level `CLAUDE.md` got a one-paragraph mode-awareness note clarifying that its operations apply only in librarian mode. Why: three frictions logged 2026-04-29 (wiki-centric default, `/update` heaviness, over-interpretation default) all traced to the same root cause — the librarian framing in identity was implicitly licensing aggressive filing on every conversational exchange. Separating register from write-stance lets the anticipatory-surfacing register stay while pulling write-side back to opt-in. What to watch for: friend-mode drift (wiki goes stale; the lightly-flag behavior may need tightening), mode-state confusion in early sessions (announce-on-switch rule is the visibility mechanism), and register drift toward agreement-default rather than honest pushback (the "friendliness is not agreement" bullet remains the guardrail).
+
 ### [2026-04-28] add `/ingest` and `/update` skills for batched wiki authoring
 **File:** skills/ingest/, skills/update/ · **Proposal:** [[proposals/2026-04-28-ingest-update-skills-APPLIED]]
 

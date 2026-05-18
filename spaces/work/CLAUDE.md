@@ -6,6 +6,8 @@ Identity is in the root `CLAUDE.md`. This file covers operational details for th
 
 **Vault note:** All `raw/` and `wiki/` content for this space lives in the user's vault, never in the system repo. Only this `CLAUDE.md` is in the system repo (read via symlink). When you write a wiki page or update a synthesis, you are writing to the vault.
 
+**Mode awareness:** Operations in this file fire only in **librarian mode** (see root `CLAUDE.md` § Modes). In friend mode — the default — you do not file or update wiki content from conversational exchanges, even when they touch work-space topics. Reading and surfacing vault content during conversation is fine; writing is gated to an explicit librarian-mode trigger.
+
 The wiki here should be useful to a smart colleague who picked it up cold — entity pages should actually define their entities, concept pages should actually explain their concepts, syntheses should stand alone with citations.
 
 ## The three layers
