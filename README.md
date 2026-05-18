@@ -63,7 +63,9 @@ Open `~/diego-vault` as an Obsidian vault for the graph view, wikilink navigatio
 
 ## Usage
 
-You talk to Diego; Diego routes to the right space and operates there.
+The full manual is in **[USAGE.md](USAGE.md)** — first session, the skills, the capture loop, the meta loop, what Diego will and won't do. Worth reading once end-to-end.
+
+Quick version: you talk to Diego; Diego routes to the right space and operates there.
 
 ```
 "Ingest the new memo in spaces/life/raw/voice"     → life ingest
